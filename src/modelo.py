@@ -1,9 +1,18 @@
 from database import conectar
 
-#Alteração de Teste
+def criar_modelo(nome, id_marca):
+    conn = conectar()
+    cursor = conn.cursor()
 
-#def criar_modelo(nome, id_marca):
-#Fazendo uma alteração aleatória para testar o commit
+    cursor.execute(
+        "INSERT INTO modelo(nome, id_marca) VALUES (%s, %s)",
+        (nome, id_marca)
+    )
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
 
 
 def listar_modelos():
