@@ -1,6 +1,6 @@
 from marca import *
 from modelo import *
-#from carro import *
+from carro import *
 
 # ==========================================
 # UTILITÁRIOSSSSSS

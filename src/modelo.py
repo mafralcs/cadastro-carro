@@ -57,4 +57,16 @@ def atualizar_modelo(id, nome, id_marca):
     conn.close()
 
 
-#def excluir_modelo(id):
+def excluir_modelo(id):
+    conn = conectar()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "DELETE FROM modelo WHERE id = %s",
+        (id,)
+    )
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
